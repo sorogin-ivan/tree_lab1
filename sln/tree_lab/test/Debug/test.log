@@ -1,0 +1,19 @@
+﻿Построение начато 26.03.2016 11:43:04.
+     1>Проект "C:\Иван\Лаба!\tree_lab1\sln\tree_lab\test\test.vcxproj" в узле 3 (целевые объекты build).
+     1>InitializeBuildStatus:
+         Обращение к "Debug\test.unsuccessfulbuild".
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I..\..\..\include /I..\..\..\gtest /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\..\test\test_main.cpp
+         test_main.cpp
+       ManifestResourceCompile:
+         Для всех выходных данных обновления не требуется.
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Иван\Лаба!\tree_lab1\sln\tree_lab\Debug\test.exe" /INCREMENTAL /NOLOGO /LIBPATH:..\Debuge "d-heab.lib" gtest.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\test.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Иван\Лаба!\tree_lab1\sln\tree_lab\Debug\test.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Иван\Лаба!\tree_lab1\sln\tree_lab\Debug\test.lib" /MACHINE:X86 Debug\test.exe.embed.manifest.res
+         Debug\test_main.obj
+         "Debug\test_d-heab.obj"
+     1>LINK : fatal error LNK1104: не удается открыть файл "d-heab.lib"
+     1>Построение проекта "C:\Иван\Лаба!\tree_lab1\sln\tree_lab\test\test.vcxproj" завершено (целевые объекты build) с ошибкой.
+
+СБОЙ построения.
+
+Затраченное время: 00:00:01.03

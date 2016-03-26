@@ -1,0 +1,12 @@
+﻿Построение начато 26.03.2016 11:32:56.
+     1>Проект "C:\Иван\Лаба!\tree_lab1\sln\tree_lab\d-heab\d-heab.vcxproj" в узле 2 (целевые объекты build).
+     1>InitializeBuildStatus:
+         Создание "Debug\d-heab.unsuccessfulbuild", так как было задано "AlwaysCreate".
+       FinalizeBuildStatus:
+         Файл "Debug\d-heab.unsuccessfulbuild" удаляется.
+         Обращение к "Debug\d-heab.lastbuildstate".
+     1>Построение проекта "C:\Иван\Лаба!\tree_lab1\sln\tree_lab\d-heab\d-heab.vcxproj" завершено (целевые объекты build).
+
+Построение успешно завершено.
+
+Затраченное время: 00:00:00.03
