@@ -17,19 +17,19 @@ public:
 	DHeap (const int, const int);
 	DHeap (const DHeap<HType>&);
 	~DHeap ();
-	int GetIdx (int a);
-	void Swap (const int a, const int b);
-	void PushOnIdx (const int idx, const HType a);
-	void Up (int a);
-	void Down (int a);
-	int MinChild (int a);
+	int GetIdx (int);
+	void Swap (const int, const int);
+	void PushOnIdx (const int, const HType);
+	void Up (int);
+	void Down (int);
+	int MinChild (int);
 	void DeleteMin ();
-	void DeletKey (int a);
-	void Push (HType a);
+	void DeletKey (int);
+	void Push (HType);
 	void Sort ();
-	int Ñonclusion(int idx);
-	int operator == (const DHeap<HType>& a)const;
-	DHeap& operator=(const DHeap<HType>& a);
+	int Ñonclusion(int);
+	int operator == (const DHeap<HType>&)const;
+	DHeap& operator=(const DHeap<HType>&);
 };
 
 

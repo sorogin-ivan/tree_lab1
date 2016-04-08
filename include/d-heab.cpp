@@ -5,8 +5,7 @@ template <class HType>
 DHeap<HType>::DHeap (const int arnost, const int size)
 {
 	if ((arnost <= 0) || (size < 0))
-	throw
-	exception ("Error");
+	throw ("Error");
 	arity = arnost; 
 	kolvo = size;
 	keys = new HType[kolvo];
@@ -27,3 +26,33 @@ DHeap<HType>::~DHeap ()
 {
 	delete []keys;
 }
+
+
+template <class HType>
+int DHeap<HType>::GetIdx(int a){
+
+	return ((a-1)/arity);
+
+}
+
+
+template <class HType>
+void DHeap<HType>::Swap (const int a, const int b) 
+{
+	if ((a > kolvo-1) || (b > kolvo-1))
+	throw ("Error");
+
+	HType tmp = keys[a];
+	keys[a] = keys[b];
+	keys[b] = tmp;
+}
+
+
+template <class HType>
+void DHeap<HType>::PushOnIdx (const int idx, const HType a)
+{
+	if (idx > kolvo - 1)
+		throw ("Error");
+	keys[idx] = a;
+}
+
