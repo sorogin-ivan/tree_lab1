@@ -4,11 +4,12 @@
 template <class HType>
 DHeap<HType>::DHeap (const int arnost, const int size)
 {
-	if ((arnost <= 0) || (size < 0))
-	throw ("Error");
-	arity = arnost; 
+	if ((arnost <= 0) || (size < 0) || (size > MAX_HTYPE))
+	throw
+	exception ("Error");
+	 aritly = arnost; 
 	len = size;
-	keys = new HType[len];
+	keys = new Data<HType>*[MAX_HTYPE];
 }
 
 template <class HType>

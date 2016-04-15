@@ -1,3 +1,6 @@
+#ifndef __QUEUE_H__
+#define __QUEUE_H__
+
 #include <d-heab.h>
 
 template <class HType>
@@ -108,3 +111,7 @@ HQueue<HType>::HQueue (Data<HType> **a, int n, int d)
 	queue = new DHeap<HType> (d, n);
 	queue->Add(a, n);
 }
+
+
+
+#endif
