@@ -1,13 +1,5 @@
 #include <d-heab.h>
 
-
-template <class HType>
-struct TypeQueue
-{
-	DHeap<HType>* dheab; 
-	int priority;
-};
-
 template <class HType>
 class HQueue
 {
@@ -16,15 +8,18 @@ private:
 	int MaxSize; 
 	int RealSize;
 public:
-	HQueue(int);
-	~HQueue();
-	HQueue(const HQueue&);
+	HQueue(int);//+
+	~HQueue();//+
+	HQueue(const HQueue&);//+
+	HQueue(Data<HType>**, int, int);//+
 
-	void Push(const DHeap<HType>&);
-	void Pop();
-	int IsEmpty();
-	int IsFull();
-	DHeap<HType>* Top();
+	void Push(const HType&);//+
+	void Pop();//+
+	int IsEmpty();//+
+	HType Top();//+
+    void Output();//+
+	int operator ==(const HQueue<HType>&)const;//+
+
 };
 
 
@@ -41,5 +36,75 @@ HQueue<HType>::HQueue (int size)
 template <class HType>
 HQueue<HType>::~HQueue ()
 {
-	delete [queue];
+	delete queue;
+}
+
+template <class HType>
+HQueue<Htype>::HQueue(const HQueue& a)
+{
+	this->heap = new DHeap<HType>(*(a.heap));
+}
+
+
+
+ template <class HType>
+int HQueue<HType>::IsEmpty()
+{
+	if (queue->GetLen() == 0)
+		return 1;
+	else return 0;
+}
+
+
+template <class HType>
+void HQueue<HType>::Pop()
+{
+	if (isEmpty())
+		throw
+		exception ("Error");
+	queue->DeleteMin();
+}
+
+
+
+template <class HType>
+void HQueue<HType>::Push(const Htype>& a){
+
+
+	queue->Push(a);
+
+
+}
+
+template <class HType>
+
+HType HQueue<HType>::Top(){
+
+if (isEmpty())
+throw
+   exception ("Error");
+return queue->GetKey(0);
+
+
+
+}
+
+template <class HType>
+void HQueue<HType>::Output()
+{
+	queue->Output();
+}
+
+
+template <class HType>
+int HQueue<HType>::operator== (const HQueue<HType>& a)const
+{
+	 return *queue == *a.queue;
+}
+
+template <class HType>
+HQueue<HType>::HQueue (Data<HType> **a, int n, int d)
+{
+	queue = new DHeap<HType> (d, n);
+	queue->Add(a, n);
 }
