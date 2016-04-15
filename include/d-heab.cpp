@@ -217,3 +217,27 @@ void DHeap<HType>::DeleteKey (int a)
 
 	else Down(a);
 }
+
+template <class HType>
+int DHeap<HType>::operator==(const DHeap<HType>& a)const
+{
+	if (a.len != len)
+		return 0;
+	for (int i=0;i<a.len;i++)
+	{
+		if (keys[i]->arr != a.keys[i]->arr)
+			return 0;
+	}
+	return 1;
+}
+
+
+template <class HType>
+DHeap<HType>& DHeap<HType>::operator=(const DHeap<HType>& a)
+{
+	arity = a.arity;
+	len = a.len;
+	for (int i=0;i<len;i++)
+		keys[i] = a.keys[i];
+	return *this;
+}

@@ -32,23 +32,23 @@ public:
 	DHeap (const int, const int);
 	DHeap (const DHeap<HType>&);
 	~DHeap ();
-	int GetIdx (int);
-	void Swap (const int, const int);
-	void PushOnIdx (const int, const HType);
-	void Up (int);
-	void Down (int);
+	int GetIdx (int);//+
+	void Swap (const int, const int);//+
+	void PushOnIdx (const int, const HType);//+
+	void Up (int);//+
+	void Down (int);//+
 	int MinChild (int);
-	void DeleteMin ();
-	void DeleteKey (int);
-	void Push (HType);
-	void Sort ();
-	void Output(void);
-	int operator == (const DHeap<HType>&)const;
-	DHeap& operator=(const DHeap<HType>&);
-	int GetLen(); 
-	HType GetKey(int); 
-	void Sortir();
-	void Add (Data<HType>**, int);
+	void DeleteMin ();//+
+	void DeleteKey (int);//+
+	void Push (HType);//+
+	void Sort ();//+
+	void Output(void);//+
+	int operator == (const DHeap<HType>&)const;//+
+	DHeap& operator=(const DHeap<HType>&);//+
+	int GetLen(); //+
+	HType GetKey(int); //+
+	void Sortir();//+
+	void Add (Data<HType>**, int);//+
 };
 
 
