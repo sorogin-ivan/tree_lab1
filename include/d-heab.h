@@ -39,20 +39,16 @@ public:
 	void Down (int);
 	int MinChild (int);
 	void DeleteMin ();
-	void DeletKey (int);
+	void DeleteKey (int);
 	void Push (HType);
 	void Sort ();
-	int Ñonclusion(int);
+	void Output(void);
 	int operator == (const DHeap<HType>&)const;
 	DHeap& operator=(const DHeap<HType>&);
-
-
 	int GetLen(); 
 	HType GetKey(int); 
-
 	void Sortir();
-
-	void add (Data<HType>**, int);
+	void Add (Data<HType>**, int);
 };
 
 

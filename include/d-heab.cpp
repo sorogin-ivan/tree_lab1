@@ -124,3 +124,96 @@ void DHeap<HType>::Push (HType a)
 	keys = tmp;
 }
 
+
+
+
+template <class HType>
+void DHeap<HType>::Sort ()
+{
+	if (len == 0)
+		throw
+		exception ("Error");
+	for (int i=len-1; i>=0;i--)
+		Down(i);
+}
+
+template <class HType>
+void DHeap<HType>::Output()
+{
+	int level=0, tmp = 0;
+	while (tmp < len)
+	{
+		tmp += pow (d,level);
+		level++;
+	}
+	int k=1, z=0;
+	cout << "\t" << keys[0]->arr << endl;
+	for (int i = 1; i < level;i++)
+	{
+		for (int j = k; (j<k+pow(d,i)) && (j < kolvo); j++)
+			cout << keys[j]->arr << "\t";
+		cout << endl;
+		if (k + pow(d,i) > kolvo)
+				k = len;
+			else k += pow(d,i);
+	}
+
+}
+
+template <class HType>
+void DHeap<HType>::Sortir () 
+{
+	int tmp = len;
+	for (int i= len-1; i >0; i--)
+		DeleteKey(0);
+	len = tmp;
+
+	tmp = 0;
+	int tmp2 = len-1;
+	while (tmp <= tmp2)
+	{
+		Swap(tmp2,tmp);
+		tmp++;
+		tmp2--;
+	}	
+}
+
+template <class HType>
+void DHeap<HType>:: Add (Data<HType> **a, int n)
+{
+	if (len + n >= MAX_HTYPE)
+		throw
+		exception ("Error");
+	for (int i = len+1; i <len+n+1; i++)
+		keys[i] = a[i-len-1];
+	len += n;
+}
+
+template <class HType>
+int DHeap<HType>::GetLen ()
+{
+	return len;
+}
+
+
+template <class HType>
+HType DHeap<HType>::GetKey (int a)
+{
+	return keys[a]->arr;
+}
+
+
+template <class HType>
+void DHeap<HType>::DeleteKey (int a)
+{
+	if (a >= len)
+		throw
+		exception ("Error");
+	Swap(a, len - 1);
+
+	len--;
+	if (keys[a]->arr < keys[GetIdx(a)]->arr)
+		Up(a);
+
+	else Down(a);
+}
