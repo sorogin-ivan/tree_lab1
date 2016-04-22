@@ -7,111 +7,105 @@ template <class HType>
 class HQueue
 {
 private:
-	TypeQueue<HType>* queue; 
-	int MaxSize; 
-	int RealSize;
+	DHeap<HType> *heap;
 public:
-	HQueue(int);//+
-	~HQueue();//+
-	HQueue(const HQueue&);//+
-	HQueue(Data<HType>**, int, int);//+
+	HQueue(int);
+	~HQueue();
+	HQueue(const HQueue<HType>&);
+	HQueue(Data<HType>**, int, int);	
 
-	void Push(const HType&);//+
-	void Pop();//+
-	int IsEmpty();//+
-	HType Top();//+
-    void Output();//+
-	int operator ==(const HQueue<HType>&)const;//+
-
+	void Push(const HType);
+	void Push(Data<HType>*);
+	void Pop();
+	int IsEmpty();
+	Data<HType>* Top();
+	void Output();
+	int GetSize ();
+	int operator ==(const HQueue<HType>&)const;
 };
 
-
-
 template <class HType>
-HQueue<HType>::HQueue (int size)
-{
-	queue->dheab = new DHeap<HType>;
-	queue->priority = 0;
-	MaxSize = size;
-	RealSize = 0;
+HQueue<HType>::HQueue (int d)
+{	
+	if (d < 0)
+		throw
+		exception ("Error");
+	heap = new DHeap<HType> (d, 0);
 }
 
 template <class HType>
 HQueue<HType>::~HQueue ()
 {
-	delete queue;
+	delete heap;
 }
 
 template <class HType>
-HQueue<Htype>::HQueue(const HQueue& a)
+HQueue<HType>::HQueue (const HQueue<HType>& a)
 {
 	this->heap = new DHeap<HType>(*(a.heap));
 }
 
-
-
  template <class HType>
 int HQueue<HType>::IsEmpty()
 {
-	if (queue->GetLen() == 0)
+	if (heap->GetLen() == 0)
 		return 1;
 	else return 0;
 }
 
-
 template <class HType>
 void HQueue<HType>::Pop()
 {
-	if (isEmpty())
+	if (IsEmpty())
 		throw
 		exception ("Error");
-	queue->DeleteMin();
-}
-
-
-
-template <class HType>
-void HQueue<HType>::Push(const Htype>& a){
-
-
-	queue->Push(a);
-
-
+	heap->DeleteMin();
 }
 
 template <class HType>
-
-HType HQueue<HType>::Top(){
-
-if (isEmpty())
-throw
-   exception ("Error");
-return queue->GetKey(0);
-
-
-
-}
-
-template <class HType>
-void HQueue<HType>::Output()
+int HQueue<HType>::GetSize()
 {
-	queue->Output();
+	return heap->GetLen();
 }
 
+template <class HType>
+void HQueue<HType>::Push(const HType a)
+{
+	heap->Push(a);
+}
+
+template <class HType>
+void HQueue<HType>::Push(Data<HType> *a)
+{
+	heap->Push(a);
+}
+
+template <class HType>
+Data<HType>* HQueue<HType>::Top ()
+{
+	if (IsEmpty())
+		throw
+		exception ("Error");
+	return heap->GetLen(0);
+}
+
+template <class HType>
+void HQueue<HType>::Output ()
+{
+	heap->Output();
+}
 
 template <class HType>
 int HQueue<HType>::operator== (const HQueue<HType>& a)const
 {
-	 return *queue == *a.queue;
+	 return *heap == *a.heap;
 }
 
 template <class HType>
-HQueue<HType>::HQueue (Data<HType> **a, int n, int d)
+HQueue<HType>::HQueue (Data<HType>** a, int n, int d)
 {
-	queue = new DHeap<HType> (d, n);
-	queue->Add(a, n);
+	heap = new DHeap<HType> (d, 0);
+	heap->add(a, n);
 }
-
-
-
+	
 #endif
