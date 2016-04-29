@@ -295,7 +295,7 @@ HType* Graph<HType>::deykstra(int s)
 		if (min == MAX_HTYPE) break;
 		vis[i]=w;
 		for (int j=0; j < n; j++) {
-			if (!visit(j,vis) && graph[w][j]!=0 && (dist[w]+graph[w][j])<=dist[j]) 
+			if (!Visit(j,vis) && graph[w][j]!=0 && (dist[w]+graph[w][j])<=dist[j]) 
 			{
 				P[j]=w;
 				dist[j]=dist[w]+graph[w][j];

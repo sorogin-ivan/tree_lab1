@@ -86,7 +86,7 @@ Data<HType>* HQueue<HType>::Top ()
 	if (IsEmpty())
 		throw
 		exception ("Error");
-	return heap->GetLen(0);
+	return heap->GetKey(0);
 }
 
 template <class HType>

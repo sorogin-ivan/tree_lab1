@@ -153,7 +153,7 @@ Graph<HType>* Sets<HType>::kruskal (Graph<HType>*& gr)
 	int i = 0;
 	while ((treeSize < n-1) && (i < m))
 	{
-		edge<HType> *tmp = gr->getMinEdge(i);
+		edge<HType> *tmp = gr->GetMinEdge(i);
 		int o = tmp->o;
 		int k = tmp->k;
 		int weight = tmp->weight;
@@ -162,7 +162,7 @@ Graph<HType>* Sets<HType>::kruskal (Graph<HType>*& gr)
 		if (Ao != Ak)
 		{
 			s->UnionSets(Ao, Ak);
-			tree->addEdge(o, k, weight);
+			tree->AddEdge(o, k, weight);
 			treeSize++;
 		}
 		i++;
