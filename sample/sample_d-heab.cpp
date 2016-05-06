@@ -20,11 +20,8 @@ void main ()
 	system("cls");
 	cout << "Изначальное" << endl;
 	heap->Output();
-
-	cout << "Сортировка раз" << endl;
 	heap->Sort();
-	heap->Output();
-	cout << "Сортировка два" << endl;
+	cout << "Сортировка:" << endl;
 	heap->Sortir();
 	heap->Output();
 

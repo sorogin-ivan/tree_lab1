@@ -5,7 +5,7 @@
 #include <cstdlib>
 #include <iostream>
 #include "queue.h"
-#include <d-heab.h>
+#include "d-heab.h"
 
 #define maxVerticesSize 1000	
 
@@ -275,7 +275,7 @@ HType* Graph<HType>::deykstra(int s)
 		vis[i] = -1;
 	vis[0] = s;
 	int w, min;
-//////////////////////////////////////////////////////////////
+
 	for (int i=0; i<n; i++) 
 	{                       
 		if (graph[s][i]==0)

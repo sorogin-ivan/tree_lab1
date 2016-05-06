@@ -34,10 +34,14 @@ void main()
 
 	cout << "вот путь): " << endl << endl;	
 	for (int i = 0; i < n; i++)
-		if (dist[i] == MAX_HTYPE)
-			cout << -1 << ' ';
-		else
-			cout << dist[i] << ' ';
-	cout << endl;
+		if (dist[i] == MAX_HTYPE){
+			cout<< "В "<<i<<" нету пути(  ";
+			cout <<"Вес  " << -1 << endl;}
+		else{
+			cout <<"Передидущая: " << dist[i];
+			cout << "  Вес " << dist[i]<< endl;
+	
+		}
+		cout << endl;
 
 }	
