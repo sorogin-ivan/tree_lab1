@@ -3,44 +3,28 @@
 void main ()
 {
 	setlocale(LC_CTYPE, "Russian");
-	cout << "let's" << endl;
-	cout << "do it" << endl;
+	cout << "Количество вершин:" << endl;
 	int a;
 	cin >> a;
 	DHeap<int> *heap = new DHeap <int> (a, 0);
-	cout << "go" << endl;
+	cout << "Количество веток:" << endl;
 	int b;
 	cin >> b;
 	int c;
 	for (int i=0;i<b;i++)
 	{
-		cout << "i" << i << "yea" << endl;
-		cin >> c;
+		cout << "i" << i << endl;
+		c=rand()%5;
 		heap->Push(c);
 	}
 	system("cls");
-	cout << "clear?)" << endl;
+	cout << "Изначальное" << endl;
 	heap->Output();
 
-	cout << "Are you ready?)" << endl;
-	cin >> a;
-	switch (a)
-	{
-	case 1:
-		cout << "Kaka" << endl;
-		break;
-	case 2:
-		cout << "Go!!!" << endl;
-		return;
-	default:
-		cout << "1 or 2??" << endl;
-	}
-
-	cout << "And it" << endl;
+	cout << "Сортировка раз" << endl;
 	heap->Sort();
 	heap->Output();
-	cout << "Is" << endl;
-	
+	cout << "Сортировка два" << endl;
 	heap->Sortir();
 	heap->Output();
 
